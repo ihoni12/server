@@ -75,7 +75,7 @@ mongoose
     .connect('mongodb://127.0.0.1:27017/trabajo')
     .then(() => {
         // Conectarse
-        const server = app.listen(PORT, '0.0.0.0', () => {
+        const server = app.listen(PORT, () => {
             // Al conectarse
             console.log('Server is running on port ' + PORT);
 
