@@ -74,6 +74,7 @@ app.use('/', borrarUsuario);
 mongoose
     .connect('mongodb://127.0.0.1:27017/trabajo')
     .then(() => {
+        console.log('entro mongos connect');
         // Conectarse
         const server = app.listen(PORT, () => {
             // Al conectarse
@@ -81,8 +82,10 @@ mongoose
 
             // Configura Socket.IO para que funcione con el servidor Express
             const io = socketIo(server);
+            console.log('io', io);
 
             io.on('connection', (socket) => {
+                console.log('A client has connected.'); // Imprime un mensaje en la consola cuando un cliente se conecta
                 console.log('A client has connected.'); // Imprime un mensaje en la consola cuando un cliente se conecta
 
                 let lastTotalCombined = null;
