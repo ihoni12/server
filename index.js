@@ -82,10 +82,9 @@ mongoose
 
             // Configura Socket.IO para que funcione con el servidor Express
             const io = socketIo(server);
-            console.log('io', io);
+            console.log('io');
 
             io.on('connection', (socket) => {
-                console.log('A client has connected.'); // Imprime un mensaje en la consola cuando un cliente se conecta
                 console.log('A client has connected.'); // Imprime un mensaje en la consola cuando un cliente se conecta
 
                 let lastTotalCombined = null;
