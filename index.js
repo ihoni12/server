@@ -40,7 +40,7 @@ const devuelveThohether = require('./AdminPage/devuelveThohether');
 
 const app = express();
 
-const PORT = 3000 || 5000; //el puerto
+const PORT = 8080 || 5000; //el puerto
 
 app.use(express.json());
 app.use(cors()); // use cors
