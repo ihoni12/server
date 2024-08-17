@@ -8,8 +8,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors'); // import cors package
 
-const socketIo = require('socket.io'); // Importa Socket.IO
-const AllIn = require('./models/AllIn');
+const cantidadLeyeron = require('./socket/catidadLeyeron');
 
 const authLogin = require('./LoginPage/authLogin');
 const authRegristro = require('./LoginPage/authRegristro');
@@ -23,18 +22,9 @@ const adminEs = require('./AdminPage/adminEs');
 const suveOneInfo = require('./InfoPage/suveOneInfo');
 const authDevuelveInfoEstudia = require('./InfoPage/authDevuelveInfoEstudia');
 const borrarUsuario = require('./InfoPage/borrarUsuario');
+const authAllAkdashot = require('./AkdashotPage/authAllAkdashot');
 
 const iniciaSetThogether = require('./AddHomePage/autoSetDay');
-
-//no usados
-const authAllAkdashot = require('./AkdashotPage/authAllAkdashot');
-const authDevuelvePerek = require('./HomePage/authDevuelvePerek');
-const authUsuarioInfo = require('./InfoPage/authUsuarioInfo');
-const authSetThogether = require('./AddHomePage/authSetThogether');
-const authCualesEstudian = require('./HomePage/authCualesEstudian');
-const authSumaLeyo = require('./HomePage/authSumaLeyo');
-const revisaNivel = require('./Seguridad/devuelveRevisaAdmin');
-const devuelveThohether = require('./AdminPage/devuelveThohether');
 
 //const test = require('./jaluka/test');
 
@@ -52,14 +42,7 @@ app.use('/', authLogin);
 app.use('/', authRegristro);
 app.use('/', authUsuarioAkdashot);
 app.use('/', authAllAkdashot);
-app.use('/', authDevuelvePerek);
-app.use('/', authUsuarioInfo);
-app.use('/', authSetThogether);
-app.use('/', authCualesEstudian);
-app.use('/', authSumaLeyo);
-app.use('/', revisaNivel);
 app.use('/', adminThogether);
-app.use('/', devuelveThohether);
 app.use('/', authObtieneMasBajoThogether);
 app.use('/', leyoRevisa);
 app.use('/', sumarThogether);
@@ -79,58 +62,7 @@ mongoose
         const server = app.listen(PORT, () => {
             // Al conectarse
             console.log('Server is running on port ' + PORT);
-
-            // Configura Socket.IO para que funcione con el servidor Express
-            const io = socketIo(server);
-            console.log('io');
-
-            io.on('connection', (socket) => {
-                console.log('A client has connected.'); // Imprime un mensaje en la consola cuando un cliente se conecta
-
-                let lastTotalCombined = null;
-
-                const calculateTotal = (field) => {
-                    if (!field) return 0;
-                    return Object.values(field).reduce(
-                        (acc, curr) => acc + curr,
-                        0
-                    );
-                };
-
-                const intervalId = setInterval(async () => {
-                    try {
-                        // Consultar MongoDB para obtener el último documento
-                        const result = await AllIn?.findOne().sort({
-                            date: -1,
-                        });
-                        //console.log('result: ', result);
-                        if (result) {
-                            const totalAllSheferThogether = calculateTotal(
-                                result.allSheferThogether
-                            );
-
-                            // Emitir los datos solo si ha habido un cambio
-                            if (totalAllSheferThogether !== lastTotalCombined) {
-                                const data = {
-                                    count: totalAllSheferThogether,
-                                };
-                                // Emitir a todos los clientes conectados
-                                io.emit('update', data);
-
-                                lastTotalCombined = totalAllSheferThogether;
-                            }
-                        }
-                    } catch (err) {
-                        console.error('Error al consultar MongoDB:', err);
-                    }
-                }, 1000);
-
-                // Limpiar el intervalo cuando el usuario se desconecta
-                socket.on('disconnect', () => {
-                    clearInterval(intervalId);
-                    console.log('Usuario desconectado: ' + socket.id);
-                });
-            });
+            const io = cantidadLeyeron(server);
         });
     })
     .catch((err) => {

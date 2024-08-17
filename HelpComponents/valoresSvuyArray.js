@@ -4,25 +4,25 @@ function valoresSvuyArray(params) {
     switch (params) {
         case 0:
         case 150:
-            return pasToArrayTwoItems(0, 20);
+            return pasToArrayTwoItems(0, 28);
         case 1:
-        case 21:
-            return pasToArrayTwoItems(21, 41);
+        case 29:
+            return pasToArrayTwoItems(29, 49);
         case 2:
-        case 42:
-            return pasToArrayTwoItems(42, 62);
+        case 50:
+            return pasToArrayTwoItems(50, 71);
         case 3:
-        case 63:
-            return pasToArrayTwoItems(63, 83);
+        case 72:
+            return pasToArrayTwoItems(72, 88);
         case 4:
-        case 84:
-            return pasToArrayTwoItems(84, 104);
+        case 89:
+            return pasToArrayTwoItems(89, 105);
         case 5:
-        case 105:
-            return pasToArrayTwoItems(105, 125);
+        case 106:
+            return pasToArrayTwoItems(106, 118);
         case 6:
-        case 126:
-            return pasToArrayTwoItems(126, 149);
+        case 119:
+            return pasToArrayTwoItems(119, 149);
     }
 }
 module.exports = valoresSvuyArray;

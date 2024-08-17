@@ -12,7 +12,6 @@ router.post('/usuinfomakdis', async (req, res) => {
         // busca el id en la base de datos y lo retorna
         const userId = { IDdueno: dec.userId };
         const infoakdashotList = await akdashot.find(userId);
-        console.log(infoakdashotList); //revisar
 
         if (!infoakdashotList || infoakdashotList.length === 0) {
             return res

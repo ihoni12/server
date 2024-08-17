@@ -11,7 +11,6 @@ const { generarToken } = require('../Seguridad/createToken');
 // Inicio de sesión
 router.post('/signin', async (req, res) => {
     try {
-        console.log('itento login');
         // Obtener los datos de inicio de sesión del cuerpo de la solicitud
         const { usuName, contracena, email } = req.body;
 

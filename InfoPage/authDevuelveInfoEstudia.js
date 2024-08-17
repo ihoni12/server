@@ -18,7 +18,6 @@ router.post('/devuelveInformacionQueEstudia', async (req, res) => {
                 .status(404)
                 .json({ mensaje: 'Documento principal no encontrado' });
         }
-        console.log(estudiaUser.alertas);
         return res.status(200).json({
             planes: estudiaUser.planes,
             timeMessanger: estudiaUser.alertas,

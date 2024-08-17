@@ -4,7 +4,6 @@ const router = express.Router();
 
 router.post('/revisaEsAdmin', async (req, res) => {
     try {
-        console.log('entro admin');
         //para activar admin tiene que desconectar entrar otro usuario y volver a entrar
         const { tokenGuardado } = req.body;
         const dec = decodificarToken(tokenGuardado);

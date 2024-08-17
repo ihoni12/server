@@ -20,6 +20,7 @@ router.post('/signup', async (req, res) => {
             lName,
             dadAllName,
             momAllName,
+            nacimiento,
         } = req.body;
         // Verificar si el correo electrónico o el nombre de usuario ya existen
         const existingUser = await user.findOne({
@@ -44,6 +45,7 @@ router.post('/signup', async (req, res) => {
             lName,
             dadAllName,
             momAllName,
+            nacimiento,
         });
 
         bcrypt.hash(contracena, saltRounds, async (err, hash) => {
