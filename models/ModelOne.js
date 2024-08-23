@@ -7,6 +7,7 @@ const modeloNoJson = {
     date: { type: Date, required: true },
     perek: { type: Schema.Types.Mixed, required: true, default: [] }, // Array de cualquier tipo
     count: { type: Number, default: 1 },
+    lugar: { type: Number, default: 1, require: true },
     avisa: { type: Boolean, require: true, default: false },
     avisaTime: { type: Date, require: true },
     existe: { type: Boolean, required: true, default: true },
