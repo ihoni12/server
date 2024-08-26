@@ -23,6 +23,7 @@ const suveOneInfo = require('./InfoPage/suveOneInfo');
 const authDevuelveInfoEstudia = require('./InfoPage/authDevuelveInfoEstudia');
 const borrarUsuario = require('./InfoPage/borrarUsuario');
 const authAllAkdashot = require('./AkdashotPage/authAllAkdashot');
+const conectado = require('./HelpComponents/conectado.js');
 
 const iniciaSetThogether = require('./AddHomePage/autoSetDay');
 
@@ -50,6 +51,7 @@ app.use('/', adminEs);
 app.use('/', suveOneInfo);
 app.use('/', authDevuelveInfoEstudia);
 app.use('/', borrarUsuario);
+app.use('/', conectado);
 
 //app.use('/', test);
 
