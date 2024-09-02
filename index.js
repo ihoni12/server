@@ -25,6 +25,10 @@ const borrarUsuario = require('./InfoPage/borrarUsuario');
 const authAllAkdashot = require('./AkdashotPage/authAllAkdashot');
 const conectado = require('./HelpComponents/conectado.js');
 
+//bidonim
+const reBidon = require('./Bidones/recivirBidon.js');
+const suBidon = require('./Bidones/suvirBidon.js');
+
 const iniciaSetThogether = require('./AddHomePage/autoSetDay');
 
 //const test = require('./jaluka/test');
@@ -52,6 +56,10 @@ app.use('/', suveOneInfo);
 app.use('/', authDevuelveInfoEstudia);
 app.use('/', borrarUsuario);
 app.use('/', conectado);
+
+//bidones
+app.use('/', reBidon);
+app.use('/', suBidon);
 
 //app.use('/', test);
 
