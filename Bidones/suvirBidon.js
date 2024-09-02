@@ -6,7 +6,7 @@ router.post('/nuevoBidon', async (req, res) => {
     try {
         //cambio 7
         const { key, newItem } = req.body;
-        if (key != 'hola') {
+        if (/*key != 'hola'*/ false) {
             return res.status(401).send({ msg: 'Key no valido' });
         }
         const { name, bid, chad, DA, DB, DD, piva } = newItem;

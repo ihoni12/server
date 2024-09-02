@@ -6,7 +6,7 @@ router.post('/devuelveBidones', async (req, res) => {
     try {
         //cambio 7
         const { key } = req.body;
-        if (key != 'hola') {
+        if (/*key != 'hola'*/ false) {
             return res.status(401).send({ msg: 'Key no valido' });
         }
 
