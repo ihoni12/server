@@ -26,8 +26,8 @@ const authAllAkdashot = require('./AkdashotPage/authAllAkdashot');
 const conectado = require('./HelpComponents/conectado.js');
 
 //bidonim
-const reBidon = require('./Bidones/recivirBidon.js');
-const suBidon = require('./Bidones/suvirBidon.js');
+const reBidon = require('./Bidon/recivirBidon.js');
+const suBidon = require('./Bidon/suvirBidon.js');
 
 const iniciaSetThogether = require('./AddHomePage/autoSetDay');
 
