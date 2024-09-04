@@ -22,6 +22,7 @@ router.post('/obtenerEstudioThogether', async (req, res) => {
             { $inc: { [`pidieronAllSheferThogether.${indiceDelMinimo}`]: 1 } }, // Incrementamos el valor en el índice encontrado
             {}
         );
+
         if (!infoEstudian) {
             return res
                 .status(404)

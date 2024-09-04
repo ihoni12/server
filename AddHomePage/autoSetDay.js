@@ -24,6 +24,7 @@ const iniciaCron = () => {
         //esto solo guarda cuantos se agararon en todos juntos
         //const allInNew = new AllIn();
         //await allInNew.save();
+
         //creo un documento de AllJuntos
         const nuevoDocumento = new AllJuntos({
             yomi: ultimoDocumento.yomi,

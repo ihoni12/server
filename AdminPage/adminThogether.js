@@ -3,6 +3,7 @@ const AllInf = require('../models/ModelAllThogether');
 const valoresSheferArray = require('../HelpComponents/valoresSheferArray');
 const valoresSvuyArray = require('../HelpComponents/valoresSvuyArray');
 const valoresJodsiArray = require('../HelpComponents/valoresJodsiArray');
+const AllIn = require('../models/AllIn');
 const router = express.Router();
 
 router.post('/setAdminThogether', async (req, res) => {
@@ -25,7 +26,8 @@ router.post('/setAdminThogether', async (req, res) => {
 
         // Guarda el nuevo documento en la base de datos
         await nuevoDocumento.save();
-
+        const allInNew = new AllIn();
+        await allInNew.save();
         res.status(201).json({ mensaje: 'Información creada exitosamente' });
     } catch (error) {
         res.status(500).json({ error: error.message });
