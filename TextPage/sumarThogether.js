@@ -1,14 +1,13 @@
 const express = require('express');
 const router = express.Router();
-const AllInf = require('../models/ModelAllThogether');
-const AllIn = require('../models/AllIn');
+const juntos = require('../models/ModelAllThogether');
 
 router.post('/leyoThogether', async (req, res) => {
     try {
         const { index } = req.body;
 
         // Encuentra el documento más reciente
-        await AllInf.findOneAndUpdate(
+        await juntos.findOneAndUpdate(
             {},
             { $inc: { [`allSheferThogether.${index}`]: 1 } },
             { sort: { date: -1 }, new: true }
