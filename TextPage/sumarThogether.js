@@ -5,7 +5,6 @@ const juntos = require('../models/ModelAllThogether');
 router.post('/leyoThogether', async (req, res) => {
     try {
         const { index } = req.body;
-        console.log('asdas');
 
         // Encuentra el documento más reciente
         await juntos.findOneAndUpdate(
