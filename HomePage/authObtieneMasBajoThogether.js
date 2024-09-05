@@ -15,9 +15,6 @@ router.post('/obtenerEstudioThogether', async (req, res) => {
 
         // Encuentra el índice del valor mínimo
         const indiceDelMinimo = valoresAllShefer.indexOf(valorMinimo);
-        console.log(valoresAllShefer);
-        console.log('indice:', indiceDelMinimo);
-        console.log('minimo:', valorMinimo);
 
         // Realiza la actualización, incrementando el valor del índice correspondiente
         await AllIn.findOneAndUpdate(
