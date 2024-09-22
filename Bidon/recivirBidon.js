@@ -31,9 +31,9 @@ router.post('/devuelveBidones', limiter, async (req, res) => {
         console.log('nivel ', nivel);
 
         const bidones = await Bidon.find();
-        console.log(bidden);
 
-        res.status(200).json({ bi: bidones, nivel: nivel });
+        if (bidones) res.status(200).json({ bi: bidones, nivel: nivel });
+        else res.status(200).json({ bi: {}, nivel: nivel });
     } catch (err) {
         res.status(500).json({ error: err.message });
     }
