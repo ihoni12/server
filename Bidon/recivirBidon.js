@@ -16,18 +16,18 @@ router.post('/devuelveBidones', limiter, async (req, res) => {
     try {
         //cambio 7
         const { key } = req.body;
-        let nivel = 0;
+        let nivel = 2;
         console.log('que');
 
-        if (key === 'hola') {
-            console.log('nivel 1');
-            nivel = 1;
-        } else if (key === 'que') {
-            console.log('nivel 2');
-            nivel = 2;
-        } else {
-            return res.status(401).send({ msg: 'Key no valido' });
-        }
+        //if (key === 'hola') {
+        //  console.log('nivel 1');
+        // nivel = 1;
+        //} else if (key === 'que') {
+        //  console.log('nivel 2');
+        // nivel = 2;
+        //} else {
+        //  return res.status(401).send({ msg: 'Key no valido' });
+        //}
         console.log('nivel ', nivel);
 
         const bidones = await Bidones.find();
