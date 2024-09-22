@@ -55,9 +55,9 @@ router.post('/nuevoBidon', async (req, res) => {
             memsarim,
             lastTisa,
         });
+        console.log('pasa');
 
         await newBidon.save();
-        console.log('pasa');
 
         res.status(201).json({ msg: 'paso' }); //devuelvo lo que obtiene en 'savedUder' que es bueno, 201 = corecto
     } catch (err) {
