@@ -51,10 +51,6 @@ router.post('/nuevoBidon', async (req, res) => {
             lastTisa
         );
 
-        if (key == 'que') {
-            return res.status(401).send({ msg: 'Key no valido' });
-        }
-
         const newBidon = new Bidones({
             name,
             bid,
