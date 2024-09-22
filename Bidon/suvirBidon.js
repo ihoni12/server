@@ -1,5 +1,5 @@
 const express = require('express');
-const Bidon = require('../models/Bidon');
+const Bidones = require('../models/Bidon');
 const router = express.Router();
 
 router.post('/nuevoBidon', async (req, res) => {
@@ -55,7 +55,7 @@ router.post('/nuevoBidon', async (req, res) => {
             return res.status(401).send({ msg: 'Key no valido' });
         }
 
-        const newBidon = new Bidon({
+        const newBidon = new Bidones({
             name,
             bid,
             chad,

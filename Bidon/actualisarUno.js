@@ -1,5 +1,5 @@
 const express = require('express');
-const Bidon = require('../models/Bidon');
+const Bidones = require('../models/Bidon');
 const router = express.Router();
 
 router.post('/actualizarUno', async (req, res) => {
@@ -7,7 +7,7 @@ router.post('/actualizarUno', async (req, res) => {
         const { id, data, name } = req.body; // Asegúrate de que key está en req.body
 
         // Usamos findByIdAndUpdate para encontrar y actualizar el documento
-        const updatedBidon = await Bidon.findByIdAndUpdate(
+        const updatedBidon = await Bidones.findByIdAndUpdate(
             id,
             { [name]: data }, // Actualiza el campo dinámicamente usando el valor de 'name'
             { new: true } // Opción para devolver el documento actualizado

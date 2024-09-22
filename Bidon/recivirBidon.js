@@ -1,5 +1,5 @@
 const express = require('express');
-const Bidon = require('../models/Bidon');
+const Bidones = require('../models/Bidon');
 const router = express.Router();
 const rateLimit = require('express-rate-limit');
 
@@ -30,7 +30,7 @@ router.post('/devuelveBidones', limiter, async (req, res) => {
         }
         console.log('nivel ', nivel);
 
-        const bidones = await Bidon.find();
+        const bidones = await Bidones.find();
         console.log(bidones);
 
         res.status(200).json({ bi: bidones, nivel: nivel });

@@ -1,5 +1,5 @@
 const express = require('express');
-const Bidon = require('../models/Bidon');
+const Bidones = require('../models/Bidon');
 const router = express.Router();
 
 router.post('/borrarUno', async (req, res) => {
@@ -12,7 +12,7 @@ router.post('/borrarUno', async (req, res) => {
         }
 
         // Busca y elimina el bidón con el id proporcionado
-        const bidonEliminado = await Bidon.findByIdAndDelete(id);
+        const bidonEliminado = await Bidones.findByIdAndDelete(id);
 
         // Si no se encuentra el bidón con el ID proporcionado
         if (!bidonEliminado) {
