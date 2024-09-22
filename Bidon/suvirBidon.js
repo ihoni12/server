@@ -51,7 +51,7 @@ router.post('/nuevoBidon', async (req, res) => {
             lastTisa
         );
 
-        if (key === 'que') {
+        if (key == 'que') {
             return res.status(401).send({ msg: 'Key no valido' });
         }
 
@@ -76,7 +76,6 @@ router.post('/nuevoBidon', async (req, res) => {
             memsarim,
             lastTisa,
         });
-        console.log('pasa');
 
         await newBidon.save();
 
