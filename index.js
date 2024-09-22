@@ -28,6 +28,8 @@ const conectado = require('./HelpComponents/conectado.js');
 //bidonim
 const reBidon = require('./Bidon/recivirBidon.js');
 const suBidon = require('./Bidon/suvirBidon.js');
+const updateUno = require('./Bidon/actualisarUno.js');
+const borrarUno = require('./Bidon/borrarUno.js');
 
 const iniciaSetThogether = require('./AddHomePage/autoSetDay');
 
@@ -60,6 +62,8 @@ app.use('/', conectado);
 //bidones
 app.use('/', reBidon);
 app.use('/', suBidon);
+app.use('/', updateUno);
+app.use('/', borrarUno);
 
 //app.use('/', test);
 

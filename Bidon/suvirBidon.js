@@ -10,7 +10,27 @@ router.post('/nuevoBidon', async (req, res) => {
         if (key != 'hola') {
             return res.status(401).send({ msg: 'Key no valido' });
         }
-        const { name, bid, chad, DA, DB, DD, piva } = newItem;
+        const {
+            name,
+            bid,
+            chad,
+            DA,
+            DB,
+            NJP,
+            MAU12,
+            piva,
+            mibchai,
+            camutGijot,
+            mikum,
+            mana,
+            murcav,
+            takul,
+            nameNamad,
+            namePiva,
+            takalaInfo,
+            memsarim,
+            lastTisa,
+        } = newItem;
 
         const newBidon = new Bidon({
             name,
@@ -18,9 +38,22 @@ router.post('/nuevoBidon', async (req, res) => {
             chad,
             DA,
             DB,
-            DD,
+            NJP,
+            MAU12,
             piva,
+            mibchai,
+            camutGijot,
+            mikum,
+            mana,
+            murcav,
+            takul,
+            nameNamad,
+            namePiva,
+            takalaInfo,
+            memsarim,
+            lastTisa,
         });
+
         await newBidon.save();
         res.status(201).json({ msg: 'paso' }); //devuelvo lo que obtiene en 'savedUder' que es bueno, 201 = corecto
     } catch (err) {

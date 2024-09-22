@@ -12,7 +12,7 @@ const BidonSchema = new Schema({
     bid: {
         type: Number,
         required: true,
-        enum: [600, 370, 300],
+        enum: [600, 370, 300, 2],
     },
 
     // Lado del bidón ('l' o 'r')
@@ -31,7 +31,11 @@ const BidonSchema = new Schema({
         type: Date,
         default: null,
     },
-    DD: {
+    NJP: {
+        type: Date,
+        default: null,
+    },
+    MAU12: {
         type: Date,
         default: null,
     },
@@ -39,7 +43,50 @@ const BidonSchema = new Schema({
         type: Date,
         default: null,
     },
-
+    mibchai: {
+        type: Boolean,
+        default: false,
+    },
+    camutGijot: {
+        type: Number,
+        default: 0,
+    },
+    mikum: {
+        type: Number,
+        default: 1,
+    },
+    mana: {
+        type: Number,
+        default: 1,
+    },
+    murcav: {
+        type: Boolean,
+        default: false,
+    },
+    takul: {
+        type: Boolean,
+        default: false,
+    },
+    nameNamad: {
+        type: String,
+        default: null,
+    },
+    namePiva: {
+        type: String,
+        default: null,
+    },
+    takalaInfo: {
+        type: String,
+        default: null,
+    },
+    memsarim: {
+        type: Date,
+        default: null,
+    },
+    lastTisa: {
+        type: Date,
+        default: null,
+    },
     // Fecha de creación
     creado: { type: Date, default: Date.now },
 });
