@@ -6,14 +6,8 @@ router.post('/nuevoBidon', async (req, res) => {
     try {
         //cambio 7
 
-        const { key, newItem } = req.body;
-        console.log(key);
-        console.log(newItem);
-
-        if (key === 'que') {
-            return res.status(401).send({ msg: 'Key no valido' });
-        }
         const {
+            key,
             name,
             bid,
             chad,
@@ -33,7 +27,13 @@ router.post('/nuevoBidon', async (req, res) => {
             takalaInfo,
             memsarim,
             lastTisa,
-        } = newItem;
+        } = req.body;
+        console.log(key);
+        console.log(newItem);
+
+        if (key === 'que') {
+            return res.status(401).send({ msg: 'Key no valido' });
+        }
 
         const newBidon = new Bidon({
             name,
