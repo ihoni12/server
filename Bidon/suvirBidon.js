@@ -29,6 +29,27 @@ router.post('/nuevoBidon', async (req, res) => {
             lastTisa,
         } = req.body;
         console.log(key);
+        console.log(
+            name,
+            bid,
+            chad,
+            DA,
+            DB,
+            NJP,
+            MAU12,
+            piva,
+            mibchai,
+            camutGijot,
+            mikum,
+            mana,
+            murcav,
+            takul,
+            nameNamad,
+            namePiva,
+            takalaInfo,
+            memsarim,
+            lastTisa
+        );
 
         if (key === 'que') {
             return res.status(401).send({ msg: 'Key no valido' });
