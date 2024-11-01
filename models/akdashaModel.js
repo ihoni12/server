@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
-const akdasha = new Schema({
+const modeloNoJsonAkdasha = {
     IDdueno: { type: String, required: true, trim: true, minlength: 1 },
     paraQuien: { type: String, required: true, trim: true, minlength: 1 },
     montoPago: { type: Number, required: true, minlength: 1 },
@@ -32,8 +32,10 @@ const akdasha = new Schema({
         enum: ['Masculino', 'Femenino'],
         default: 'Masculino',
     }, //Campo de Genero para el Usu
-});
+};
+
+const akdasha = new Schema(modeloNoJsonAkdasha);
 
 const akdashaInf = mongoose.model('akdasha', akdasha);
 
-module.exports = akdashaInf;
+module.exports = { akdashaInf, modeloNoJsonAkdasha };

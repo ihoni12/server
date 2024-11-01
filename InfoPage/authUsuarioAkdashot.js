@@ -1,5 +1,5 @@
 const express = require('express');
-const akdashot = require('../models/akdashaModel');
+const { akdashaInf } = require('../models/akdashaModel');
 const { decodificarToken } = require('../Seguridad/decodeToken');
 const router = express.Router();
 
@@ -11,14 +11,16 @@ router.post('/usuinfomakdis', async (req, res) => {
         if (!dec) return res.status(401).send({ msg: 'Token no valido' });
         // busca el id en la base de datos y lo retorna
         const userId = { IDdueno: dec.userId };
-        const infoakdashotList = await akdashot.find(userId);
+        const infoakdashotList = await akdashaInf.find(userId);
 
         if (!infoakdashotList || infoakdashotList.length === 0) {
             return res
                 .status(404)
                 .json({ msg: 'No existen akdasas para este usuario' });
         }
+
         const resultado = infoakdashotList.map((item) => ({
+            id: item._id,
             paraQuien: item.paraQuien,
             montoPago: item.montoPago,
             fechaDeEmpieza: item.fechaDeEmpieza,

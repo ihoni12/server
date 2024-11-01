@@ -1,5 +1,5 @@
 const express = require('express');
-const akdashot = require('../models/akdashaModel');
+const { akdashaInf } = require('../models/akdashaModel');
 const { decodificarToken } = require('../Seguridad/decodeToken');
 const router = express.Router();
 
@@ -17,7 +17,7 @@ router.post('/sumarAkdashot', async (req, res) => {
         const dec = decodificarToken(token);
         if (!dec) return res.status(401).send({ msg: 'Token no valido' });
 
-        const newAkdashot = new akdashot({
+        const newAkdashot = new akdashaInf({
             IDdueno: dec.userId,
             paraQuien,
             montoPago,

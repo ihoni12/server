@@ -11,6 +11,9 @@ const modeloNoJson = {
     avisa: { type: Boolean, require: true, default: false },
     avisaTime: { type: Date, require: true },
     existe: { type: Boolean, required: true, default: true },
+    //online
+    //online: { type: Boolean, default: false },
+    //akdasha: { type: String, default: null },
 };
 const oneModel = new Schema(modeloNoJson);
 
