@@ -5,7 +5,16 @@ const router = express.Router();
 //devuelve todas las akdashot
 router.post('/usuMakdisAll', async (req, res) => {
     try {
-        const infoakdashotListAll = await akdashaInf.find();
+        // Obtenemos la fecha actual (o la fecha deseada para comparar)
+        const currentDate = new Date();
+
+        // Buscar registros donde la fecha esté entre 'fechaDeEmpieza' y 'fechaDeEmpieza + mesesPagados'
+        const infoakdashotListAll = await akdashaInf.find({
+            pasa: true, // Solo registros donde pasa sea true
+            fechaDeEmpieza: { $lte: currentDate }, // 'fechaDeEmpieza' debe ser menor o igual a la fecha actual
+            // hay que Calcular la fecha final tomando 'fechaDeEmpieza' + 'mesesPagados'
+        });
+        console.log(infoakdashotListAll);
 
         if (!infoakdashotListAll || infoakdashotListAll.length === 0) {
             return res.status(404).json({ msg: 9 });

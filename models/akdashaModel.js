@@ -25,6 +25,10 @@ const modeloNoJsonAkdasha = {
         enum: ['Nismat', 'Refua'],
         default: 'Refua',
     },
+    pasa: {
+        type: Boolean,
+        default: null,
+    },
     creado: { type: Date, default: Date.now },
     ptira: { type: String },
     genero: {

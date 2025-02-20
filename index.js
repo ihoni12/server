@@ -24,6 +24,8 @@ const authDevuelveInfoEstudia = require('./InfoPage/authDevuelveInfoEstudia');
 const borrarUsuario = require('./InfoPage/borrarUsuario');
 const authAllAkdashot = require('./AkdashotPage/authAllAkdashot');
 const conectado = require('./HelpComponents/conectado.js');
+const adminActualizaAkdashot = require('./AdminPage/adminActualizaAkdashot.js');
+const adminReciveAkdasot = require('./AdminPage/adminReciveAkdasot.js');
 
 //bidonim
 const reBidon = require('./Bidon/recivirBidon.js');
@@ -58,6 +60,8 @@ app.use('/', suveOneInfo);
 app.use('/', authDevuelveInfoEstudia);
 app.use('/', borrarUsuario);
 app.use('/', conectado);
+app.use('/', adminActualizaAkdashot);
+app.use('/', adminReciveAkdasot);
 
 //bidones
 app.use('/', reBidon);
