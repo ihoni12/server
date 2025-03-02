@@ -32,6 +32,7 @@ const reBidon = require('./Bidon/recivirBidon.js');
 const suBidon = require('./Bidon/suvirBidon.js');
 const updateUno = require('./Bidon/actualisarUno.js');
 const borrarUno = require('./Bidon/borrarUno.js');
+const bidonUpdate = require('./Bidon/bidonUpdate.js');
 
 const iniciaSetThogether = require('./AddHomePage/autoSetDay');
 
@@ -68,6 +69,7 @@ app.use('/', reBidon);
 app.use('/', suBidon);
 app.use('/', updateUno);
 app.use('/', borrarUno);
+app.use('/', bidonUpdate);
 
 //app.use('/', test);
 
