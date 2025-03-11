@@ -49,7 +49,17 @@ router.post('/bidonUpdate', async (req, res) => {
 
         camposDefinidos.forEach((campo, index) => {
             if (campos[index + 1] && campos[index + 1] !== 'null') {
-                if (['DA', 'DB', 'lastTisa', 'creado'].includes(campo)) {
+                if (
+                    [
+                        'DA',
+                        'DB',
+                        'NJP',
+                        'MAU12',
+                        'piva',
+                        'memsarim',
+                        'lastTisa',
+                    ].includes(campo)
+                ) {
                     datos[campo] = parseDate(campos[index + 1]);
                 } else if (
                     campos[index + 1] === 'true' ||
