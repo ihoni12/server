@@ -54,12 +54,12 @@ router.post('/signin', async (req, res) => {
                   }
                 : null,
             personal: {
-                nombre: loginUser.allName,
                 apellidos: loginUser.lName,
                 correo: loginUser.email,
                 dad: loginUser.dadAllName,
                 mom: loginUser.momAllName,
                 genero: loginUser.genero,
+                nombre: loginUser.allName,
             },
             timeMessanger: loginUser.alertas,
         });
