@@ -200,7 +200,10 @@ const iniciaCron = () => {
                 ahora.getDate() !== fechaGuardada.getDate()
             ) {
                 // Actualizar valores
-                let yomiIndex = (Object.keys(nuevoDocumento.yomi)[0] + 1) % 150; // Incrementar yomi en 1 (asegurándote de que esté dentro del rango de 0 a 149)
+
+                let yomiActual = Number(Object.keys(nuevoDocumento.yomi)[0]);
+                let yomiIndex = (yomiActual + 1) % 150;
+                // Incrementar yomi en 1 (asegurándote de que esté dentro del rango de 0 a 149)
                 nuevoDocumento.yomi = { [yomiIndex]: 0 }; //yomi
 
                 let shefer = Object.keys(nuevoDocumento.shefer); // Incrementar yomi en 1 (asegurándote de que esté dentro del rango de 0 a 149)
@@ -220,6 +223,7 @@ const iniciaCron = () => {
 
             const diaDeLaSemana = ahora.getDay();
             nuevoDocumento.svuy = valoresSvuyArray(diaDeLaSemana); //dia de la cemana
+
             nuevoDocumento.allSheferThogether = {
                 0: 0,
                 1: 0,

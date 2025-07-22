@@ -26,6 +26,10 @@ const authAllAkdashot = require('./AkdashotPage/authAllAkdashot');
 const conectado = require('./HelpComponents/conectado.js');
 const adminActualizaAkdashot = require('./AdminPage/adminActualizaAkdashot.js');
 const adminReciveAkdasot = require('./AdminPage/adminReciveAkdasot.js');
+//map
+const SubirLugar = require('./Map/SubirLugar.js');
+const BuscarLugares = require('./Map/BuscarLugares.js');
+const VotosUpdate = require('./Map/VotosUpdate.js');
 
 //bidonim
 const reBidon = require('./Bidon/recivirBidon.js');
@@ -63,6 +67,10 @@ app.use('/', borrarUsuario);
 app.use('/', conectado);
 app.use('/', adminActualizaAkdashot);
 app.use('/', adminReciveAkdasot);
+//map
+app.use('/', SubirLugar);
+app.use('/', BuscarLugares);
+app.use('/', VotosUpdate);
 
 //bidones
 app.use('/', reBidon);
